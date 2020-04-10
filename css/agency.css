@@ -168,12 +168,33 @@ img::-moz-selection {
     font-size: 1.25em;
     padding: 12px 0;
   }
+
+  
 }
 /* von Lea vvvvvvv*/
+
+.box1, .box2 {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+    padding: 20px;
+    background: #eee;
+    box-sizing: border-box;
+}
+
+.box3 {
+    margin-right: 0;
+}
+
+    .box:last-child {
+        margin-right: 0;
+    }
+
+
 header.underhead {
     text-align: center;
     color: white;
-    background-image: url("../img/header-bg.jpg");
+    background-image: url("../img/sexy_fish.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
