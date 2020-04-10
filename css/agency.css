@@ -173,7 +173,16 @@ img::-moz-selection {
 }
 /* von Lea vvvvvvv*/
 
-.box1, .box2 {
+
+.box1 {
+    float: left;
+    width: 10%;
+    margin-right: 2%;
+    padding: 20px;
+    background: #eee;
+    box-sizing: border-box;
+}
+ .box2 {
     float: left;
     width: 32%;
     margin-right: 2%;
