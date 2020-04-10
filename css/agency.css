@@ -169,6 +169,17 @@ img::-moz-selection {
     padding: 12px 0;
   }
 }
+/* von Lea vvvvvvv*/
+header.underhead {
+    text-align: center;
+    color: white;
+   
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+/* von Lea^^^^^^*/
 
 header.masthead {
   text-align: center;
