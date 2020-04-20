@@ -6,6 +6,7 @@
 <body>
 
 <?php
+
 	$testemail = "tim@lala.de";
 	$testpasswort = "1234";
 
@@ -18,7 +19,7 @@
 			}
 			session_start();
 			$_SESSION['email'] = $email;
-			header("location: ../index.html");
+			header("location: ../index.html"); //Eingeloggte Weiterleitungsseite, evtl noch ändern
 		} else{
 			echo "Email or Passwort incorrect";
 		} 
