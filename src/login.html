@@ -8,12 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>HeppyPets - Willkommen</title>
+    <title>HappyPets - Willkommen</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
+    <link rel="stylesheet" type="text/css" href="login.css">
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -49,15 +50,44 @@
     </style>
 
     <table cellpaddig="5" cellspacing="10" align="center">
-        <h3>Login Fram using Session and cookies with remember Me </h3>
+        <!--<h3>Login Fram using Session and cookies with remember Me </h3>-->
         <form method="post" action="validate.php">
             <tr><th>Email</th><td><input type="text" name="email"></td></tr>
             <tr><th>Passwort</th><td><input type="text" name="passwort"></td></tr>
 
             <tr><td colspan="2" align="center"><input type="checkbox" name="remember" value="1">Remember Me</td></tr>
             <tr><td colspan="2" align="right"><input type="submit" value="Login" name="login"></td></tr>
-            </from>
+        </form>
     </table>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Log In</h5>
+                        <form class="form-signin" method="post" action="validate.php">
+                            <div class="form-label-group">
+                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                                <label for="inputEmail">E-Mail Adresse</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                <label for="inputPassword">Passwort</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Passwort merken</label>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Anmelden</button>
+                        </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
