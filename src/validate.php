@@ -18,7 +18,7 @@
 			}
 			session_start();
 			$_SESSION['email'] = $email;
-			header("location: welcome.php");
+			header("location: ../index.html");
 		} else{
 			echo "Email or Passwort incorrect";
 		} 
