@@ -49,17 +49,16 @@
         }
     </style>
 
-    <table cellpaddig="5" cellspacing="10" align="center">
-        <!--<h3>Login Fram using Session and cookies with remember Me </h3>-->
-        <form method="post" action="validate.php">
-            <tr><th>Email</th><td><input type="text" name="email"></td></tr>
-            <tr><th>Passwort</th><td><input type="text" name="passwort"></td></tr>
+    <!-- <table cellpaddig="5" cellspacing="10" align="center">
+    <form method="post" action="validate.php">
+        <tr><th>Email</th><td><input type="text" name="email"></td></tr>
+        <tr><th>Passwort</th><td><input type="text" name="passwort"></td></tr>
 
-            <tr><td colspan="2" align="center"><input type="checkbox" name="remember" value="1">Remember Me</td></tr>
-            <tr><td colspan="2" align="right"><input type="submit" value="Login" name="login"></td></tr>
-        </form>
-    </table>
-    
+        <tr><td colspan="2" align="center"><input type="checkbox" name="remember" value="1">Remember Me</td></tr>
+        <tr><td colspan="2" align="right"><input type="submit" value="Login" name="login"></td></tr>
+    </form>
+    </table>-->
+
     <div class="container">
         <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -68,23 +67,23 @@
                         <h5 class="card-title text-center">Log In</h5>
                         <form class="form-signin" method="post" action="validate.php">
                             <div class="form-label-group">
-                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                                 <label for="inputEmail">E-Mail Adresse</label>
                             </div>
 
                             <div class="form-label-group">
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                <input type="password" name="passwort" id="inputPassword" class="form-control" placeholder="Password" required>
                                 <label for="inputPassword">Passwort</label>
                             </div>
 
                             <div class="custom-control custom-checkbox mb-3">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <input type="checkbox" name="remember" value="1" class="custom-control-input" id="customCheck1">
                                 <label class="custom-control-label" for="customCheck1">Passwort merken</label>
                             </div>
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Anmelden</button>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="login">Anmelden</button>
                         </form>
-                        </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -129,18 +128,18 @@
         </div>
     </footer>
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="../js/jqBootstrapValidation.js"></script>
+    <script src="../js/contact_me.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/agency.min.js"></script>
+    <!-- <script src="../js/agency.min.js"></script> -->
 
 </body>
 </html>
