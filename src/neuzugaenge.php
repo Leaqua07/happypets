@@ -50,6 +50,8 @@
             </div>
         </div>
     </nav>
+<!-- *******************************************************************-->
+ <?php  include "getinfofromdb.php";?>
 
     <!--Content here-->
     <header class="underhead">
@@ -66,7 +68,8 @@
     </div>
     <form method="get" action="getinfofromdb.php">
         <div class="box2">
-            <?php echo $name; ?>
+            <?php 
+                echo $name; ?>
             <div id="ueberschrift">
                 peter der HAMSTER ist ein Fisch
             </div>
@@ -76,7 +79,7 @@
         </div>
         </form>
 
-
+<!-- *******************************************************************-->
 
 
 

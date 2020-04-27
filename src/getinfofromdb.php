@@ -17,7 +17,7 @@ $erg = $db->query("SELECT * FROM tiere") or die($db->error); // or die($db->erro
 
 if ($erg->num_rows) {
 	//echo "<p>Daten vorhanden: Anzahl ";
-	echo $erg->num_rows; // Anzahl der Datensätze
+	//echo $erg->num_rows; // Anzahl der Datensätze
 
 	while ($zeile = $erg->fetch_object()) {
 			$tier_id = $zeile->tier_id;
@@ -30,8 +30,8 @@ if ($erg->num_rows) {
 			$vermittelt = $zeile->$vermittelt;
 			$tierbild = $zeile->$tierbild;
 	
-			echo $tier_id;
-			echo $name;
+			//echo $tier_id;
+			//echo $name;
 		}
 	 
 	}
