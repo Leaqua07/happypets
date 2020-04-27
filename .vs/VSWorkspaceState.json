@@ -1,9 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\css",
-    "\\src"
+    "\\src",
+    "\\vendor",
+    "\\vendor\\bootstrap",
+    "\\vendor\\bootstrap\\css",
+    "\\vendor\\bootstrap\\js",
+    "\\vendor\\fontawesome-free",
+    "\\vendor\\fontawesome-free\\css",
+    "\\vendor\\fontawesome-free\\webfonts"
   ],
-  "SelectedNode": "\\src\\welcome.php",
+  "SelectedNode": "\\src\\logout.php",
   "PreviewInSolutionExplorer": false
 }

@@ -42,7 +42,7 @@ if ($erg->num_rows) {
 	
 			if($email == $testemail and $pass == $testpasswort){
 				if(isset($_POST['remember'])){
-					setcookie('email', $email ,time()+60*60*7);		
+					setcookie('email', $email ,time()+60*60*7);	
 				}
 				session_start();
 				$_SESSION['email'] = $email;
@@ -56,8 +56,9 @@ if ($erg->num_rows) {
 	}
 		$erg->free();
 		$db->close();
-
+			//if(session_id() === "") ist session leer?
 	?>
+
 
 	</body>
 	</html>
