@@ -56,8 +56,9 @@ if ($erg->num_rows) {
 	}
 		$erg->free();
 		$db->close();
-
+			//if(session_id() === "") ist session leer?
 	?>
+
 
 	</body>
 	</html>
