@@ -1,4 +1,5 @@
 <?php
+//---------Datenbankverbundung--------------------
 error_reporting(0); //nötig für schöne Fehlerausgabe
 $db = new mysqli('localhost', 'root', 'root', 'happypets');
 
@@ -8,17 +9,13 @@ print_r ($db->connect_error); //nötig für schöne Fehlerausgabe
 if ($db->connect_errno) {
     die('Sorry - gerade gibt es ein Problem');
 }
-//-----------------------------------------
+//-------------Datenbankabfrage----------------------------
 
-//
-$erg = $db->query("SELECT * FROM tiere") or die($db->error); // or die($db->error); gibt SQL Fehler aus
-
-//print_r($erg); //Dateninformationen
+$erg = $db->query("SELECT * FROM tiere") or die($db->error); // or die($db-
 
 if ($erg->num_rows) {
-	//echo "<p>Daten vorhanden: Anzahl ";
-	//echo $erg->num_rows; // Anzahl der Datensätze
 
+//------Ergebnismapping-------------
 	while ($zeile = $erg->fetch_object()) {
 			$tier_id = $zeile->tier_id;
 			$name = $zeile->name;
@@ -29,10 +26,9 @@ if ($erg->num_rows) {
 			$geimpft = $zeile->$geimpft;
 			$vermittelt = $zeile->$vermittelt;
 			$tierbild = $zeile->$tierbild;
-	
-			//echo $tier_id;
-			//echo $name;
+           // print($name);
 		}
+   
 	 
 	}
 		$erg->free();
