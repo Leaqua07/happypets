@@ -37,3 +37,9 @@ html,body{
      border:5px solid white;
      border-radius: 50%;
 }
+
+.fit-image{
+width: 100%;
+object-fit: cover;
+height: 300px; /* only if you want fixed height */
+}
