@@ -51,6 +51,8 @@
         </div>
     </nav>
 
+ <?php  include "getinfofromdb.php";?>
+
     <!--Content here-->
     <header class="underhead">
         <div class="container">
@@ -62,13 +64,14 @@
     <div class="box1">
 
         <img src="../img/sexy_fish.jpg" width=90px height=90px align="left">
-
+<!-- ********Datenbanksätze anzeigen lassen*******************-->
     </div>
     <form method="get" action="getinfofromdb.php">
         <div class="box2">
-            <?php echo $name; ?>
+            
             <div id="ueberschrift">
-                peter der HAMSTER ist ein Fisch
+                <?php 
+                echo $name; ?>
             </div>
             <div id="textcontent">
                 Blublublublublublulublublublub. Blublublublublublulublublublub, Blublublublublublulublublublub, Blublublublublublulublublublub
@@ -76,7 +79,7 @@
         </div>
         </form>
 
-
+<!-- *******************************************************************-->
 
 
 

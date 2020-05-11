@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+    "\\js",
     "\\src",
     "\\vendor",
     "\\vendor\\bootstrap",
@@ -10,6 +11,6 @@
     "\\vendor\\fontawesome-free\\css",
     "\\vendor\\fontawesome-free\\webfonts"
   ],
-  "SelectedNode": "\\src\\logout.php",
+  "SelectedNode": "\\src\\neuzugaenge.html",
   "PreviewInSolutionExplorer": false
 }
