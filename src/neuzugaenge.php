@@ -64,15 +64,26 @@
     <div class="box1">
 
         <img src="../img/sexy_fish.jpg" width=90px height=90px align="left">
-<!-- ********Datenbanksätze anzeigen lassen*******************-->
+
     </div>
+    <!-- ********Datenbanksätze anzeigen lassen*******************-->
     <form method="get" action="getinfofromdb.php">
         <div class="box2">
             
             <div id="ueberschrift">
                 <?php 
-                echo $name; ?>
+                 foreach ($tiere as $t) {
+                ?>
+                <tr>
+                    <td>
+                        <?php echo $t->name; ?>
+                    </td>           
+                </tr>
+                 <?php
+               } ?>
+
             </div>
+            
             <div id="textcontent">
                 Blublublublublublulublublublub. Blublublublublublulublublublub, Blublublublublublulublublublub, Blublublublublublulublublublub
             </div>
