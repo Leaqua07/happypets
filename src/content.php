@@ -76,7 +76,7 @@
                         <?php 
                             foreach ($tiere as $t) {
                         ?>
-                            <img class="card-img-top img-responsive img-fluid" src= " <?php $t->tierbild; ?> " alt="Card image cap">
+                            <img class="card-img-top img-responsive img-fluid" src= " <?php echo $t->tierbild; ?> " alt="Card image cap">
                          <div class="card-body">
                             <h5 class="card-title text-uppercase"><?php echo $t->name; ?></h5>
                        
@@ -107,6 +107,7 @@
                  <?php
                } ?>
                         </form>
+                        <!-- Ende Lea Mess-->
                         
                         <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
                        
