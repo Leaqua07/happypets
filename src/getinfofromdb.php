@@ -13,10 +13,16 @@ if ($db->connect_errno) {
 
 $erg = $db->query("SELECT * FROM tiere") or die($db->error); // or die($db-
 
-if ($erg->num_rows) {
+if ($erg->num_rows) { //Wenn min. 1 Ergebnis zurückkommt
 
 //------Ergebnismapping-------------
-	while ($zeile = $erg->fetch_object()) {
+    
+   
+		while ($datensatz = $erg->fetch_object()) {
+			$tiere[] = $datensatz;
+		}
+	
+	/* while ($zeile = $erg->fetch_object()) { // test ausgabe
 			$tier_id = $zeile->tier_id;
 			$name = $zeile->name;
 			$geburtstag = $zeile->geburtstag;
@@ -28,7 +34,7 @@ if ($erg->num_rows) {
 			$tierbild = $zeile->$tierbild;
            // print($name);
 		}
-   
+   */
 	 
 	}
 		$erg->free();

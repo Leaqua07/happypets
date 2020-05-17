@@ -14,13 +14,13 @@
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link rel="stylesheet" type="text/css" href="../css/happyhamster.css">
+    <link rel="stylesheet" type="text/css" href="../css/happypets.css">
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <script src="jquery-3.5.0.min.js"></script>
+   <!-- <script src="jquery-3.5.0.min.js"></script> -->
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -62,126 +62,61 @@
             <div class="col-xs-4 col-sm-6 col-md-8">
                 <div class="m-4 b-4"><hr></div>  <!-- Spacer -->
                 <div class="card-deck">
-                    <div class="card text-center">
-                        <img class="card-img-top img-responsive img-fluid" src="../img/Australian-Cattle-Dog-400x400.jpg" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title text-uppercase">Spike</h5>
-                        <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
-                        <dl class="row">
-                            <dt class="col-sm-3">Name</dt>
-                            <dd class="col-sm-9">Spike</dd>
-
-                            <dt class="col-sm-3">Alter</dt>
-                            <dd class="col-sm-9">
-                                <p>2 Jahre.</p>
-                                <p>Geboren Juni 2018</p>
-                            </dd>
-
-                            <dt class="col-sm-3">Geschlecht</dt>
-                            <dd class="col-sm-9">Männlich</dd>
-
-                            <dt class="col-sm-3 text-truncate">Rasse</dt>
-                            <dd class="col-sm-9">Deutscher Schäferhund</dd>
-                            
-                            <dt class="col-sm-3 text-truncate">Wohnt in</dt>
-                            <dd class="col-sm-9">München</dd>
-                            
-                            <!--<dt class="col-sm-3">Nesting</dt>
-                            <dd class="col-sm-9">
-                                <dl class="row">
-                                    <dt class="col-sm-4">Nested definition list</dt>
-                                    <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
-                                </dl>
-                            </dd>-->
-                        </dl>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Zu Spike</a>
-                        </div>
-                    </div>
-                    <div class="card text-center">
-                        <img class="card-img-top img-responsive img-fluid" src="../img/1.jpg" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title text-uppercase">Spencer</h5>
-                        <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
-                        <dl class="row">
-                            <dt class="col-sm-3">Name</dt>
-                            <dd class="col-sm-9">Spencer</dd>
-
-                            <dt class="col-sm-3">Alter</dt>
-                            <dd class="col-sm-9">
-                                <p>4 Jahre.</p>
-                                <p>Geboren August 2016</p>
-                            </dd>
-
-                            <dt class="col-sm-3">Geschlecht</dt>
-                            <dd class="col-sm-9">Männlich</dd>
-
-                            <dt class="col-sm-3 text-truncate">Rasse</dt>
-                            <dd class="col-sm-9">Hovawart</dd>
-                            
-                            <dt class="col-sm-3 text-truncate">Wohnt in</dt>
-                            <dd class="col-sm-9">Geesthacht</dd>
-                            
-                            <!--<dt class="col-sm-3">Nesting</dt>
-                            <dd class="col-sm-9">
-                                <dl class="row">
-                                    <dt class="col-sm-4">Nested definition list</dt>
-                                    <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
-                                </dl>
-                            </dd>-->
-                        </dl>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Zu Spencer</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
+                    
+                    <!--Lala
+                   
+            -->
+                <!--Leas Blödsinn ab hier*************************-->
+                <div class="m-5 b-5"><hr></div>  
                 <div class="card-deck">
                     <div class="card text-center">
-                        <img class="card-img-top img-responsive img-fluid" src="../img/hunde-230-resimage_v-variantBig24x9_w-1024.jpg" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title text-uppercase">Fabelle</h5>
-                        <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                        
+                        <?php  include "getinfofromdb.php";?>
+                        <form method="get" action="getinfofromdb.php">
+                        <?php 
+                            foreach ($tiere as $t) {
+                        ?>
+                            <img class="card-img-top img-responsive img-fluid" src= " <?php echo $t->tierbild; ?> " alt="Card image cap">
+                         <div class="card-body">
+                            <h5 class="card-title text-uppercase"><?php echo $t->name; ?></h5>
+                       
                         <dl class="row">
                             <dt class="col-sm-3">Name</dt>
-                            <dd class="col-sm-9">Fabelle</dd>
+                            <dd class="col-sm-9"><?php echo $t->name; ?></dd>
 
-                            <dt class="col-sm-3">Alter</dt>
+                            <dt class="col-sm-3">Geboren am</dt>
                             <dd class="col-sm-9">
-                                <p>3 Jahre.</p>
-                                <p>Geboren Februar 2017</p>
+                                <p><?php echo $t->geburtstag; ?></p>
                             </dd>
 
                             <dt class="col-sm-3">Geschlecht</dt>
-                            <dd class="col-sm-9">Weiblich</dd>
+                            <dd class="col-sm-9"><?php echo $t->geschlecht; ?></dd>
 
                             <dt class="col-sm-3 text-truncate">Rasse</dt>
-                            <dd class="col-sm-9">Epagneul Breton</dd>
-                            
-                            <dt class="col-sm-3 text-truncate">Wohnt in</dt>
-                            <dd class="col-sm-9">Lohra-Reimershausen</dd>
-                            
-                            <!--<dt class="col-sm-3">Nesting</dt>
-                            <dd class="col-sm-9">
-                                <dl class="row">
-                                    <dt class="col-sm-4">Nested definition list</dt>
-                                    <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
-                                </dl>
-                            </dd>-->
+                            <dd class="col-sm-9"><?php echo $t->rasse; ?></dd>
+                           
                         </dl>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Zu Fabelle</a>
+                            <a href="#" class="btn btn-primary">Zu <?php echo $t->name; ?></a>
                         </div>
-                    </div>
-                    <div class="card text-center">
+                   
+                    
+                    
+                    
+                 <?php
+               } ?>
+                        </form>
+                        <!-- Ende Lea Mess-->
+                        
+                        <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                       
+                 <!-- <div class="card text-center">
                         <img class="card-img-top img-responsive img-fluid" src="../img/Tara-blick-gestempelt-gross.jpg" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title text-uppercase">Nino</h5>
                         <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
-                        <dl class="row">
+                  <!--      <dl class="row">
                             <dt class="col-sm-3">Name</dt>
                             <dd class="col-sm-9">Nino</dd>
 
@@ -198,7 +133,7 @@
                             <dd class="col-sm-9">American Foxhound</dd>
                             
                             <dt class="col-sm-3 text-truncate">Wohnt in</dt>
-                            <dd class="col-sm-9">Babenhausen</dd>
+                            <dd class="col-sm-9">Babenhausen</dd> -->
                             
                             <!--<dt class="col-sm-3">Nesting</dt>
                             <dd class="col-sm-9">
@@ -206,12 +141,12 @@
                                     <dt class="col-sm-4">Nested definition list</dt>
                                     <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
                                 </dl>
-                            </dd>-->
-                        </dl>
+                            </dd> --> 
+                      <!--  </dl>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Zu Nino</a>
-                        </div>
+                            <a href="#" class="btn btn-primary">Zu Nino</a> 
+                        </div> -->
                     </div>
                 </div>
                 <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
