@@ -110,12 +110,12 @@
                         
                         <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
                        
-                    <div class="card text-center">
+                 <!-- <div class="card text-center">
                         <img class="card-img-top img-responsive img-fluid" src="../img/Tara-blick-gestempelt-gross.jpg" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title text-uppercase">Nino</h5>
                         <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
-                        <dl class="row">
+                  <!--      <dl class="row">
                             <dt class="col-sm-3">Name</dt>
                             <dd class="col-sm-9">Nino</dd>
 
@@ -132,7 +132,7 @@
                             <dd class="col-sm-9">American Foxhound</dd>
                             
                             <dt class="col-sm-3 text-truncate">Wohnt in</dt>
-                            <dd class="col-sm-9">Babenhausen</dd>
+                            <dd class="col-sm-9">Babenhausen</dd> -->
                             
                             <!--<dt class="col-sm-3">Nesting</dt>
                             <dd class="col-sm-9">
@@ -140,12 +140,12 @@
                                     <dt class="col-sm-4">Nested definition list</dt>
                                     <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
                                 </dl>
-                            </dd>-->
-                        </dl>
+                            </dd> --> 
+                      <!--  </dl>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Zu Nino</a>
-                        </div>
+                            <a href="#" class="btn btn-primary">Zu Nino</a> 
+                        </div> -->
                     </div>
                 </div>
                 <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
