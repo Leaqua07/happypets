@@ -74,6 +74,14 @@
                         <?php  include "getinfofromdb.php";?>
                         <form method="get" action="getinfofromdb.php">
                         <?php 
+                            if(isset( $_SESSION['email'])){
+                                echo angemeldet;
+                                 echo $_SESSION['email'] ;
+                            } else{
+                                echo nichtangemeldet;
+                            }
+                           
+                            echo lala;
                             foreach ($tiere as $t) {
                         ?>
                             <img class="card-img-top img-responsive img-fluid" src= " <?php echo $t->tierbild; ?> " alt="Card image cap">

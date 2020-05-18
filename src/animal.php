@@ -48,7 +48,7 @@
                         <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="src/login.html">Login</a>
+                        <a class="nav-link js-scroll-trigger" href="login.html">Login</a>
                     </li>
                 </ul>
             </div>
@@ -196,8 +196,9 @@
                     <dd class="col-sm-9"><?php echo $pflege; ?></dd>
 
                 </dl>
+            </div>
                 
-                </form>
+                
                 <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
                 
                 <!-- Comments -->
@@ -206,9 +207,21 @@
                         <div class="comment-wrapper">
                             <div class="panel panel-info">
                                 <div class="panel-body">
+                                    <!-- Ist User angemeldet -Prüfung   -->
+                                    <?php
+                                        if(!empty($_SESSION['eingeloggt'])) { 
+                                    ?>
+                                            
+                                        
+                                    
+                                    
                                     <textarea class="form-control" placeholder="Schreibe ein Kommentar ..." rows="3"></textarea>
                                     <br>
                                     <button type="button" class="btn btn-primary pull-right">Senden</button>
+                                    
+                                    <?php 
+                                        } 
+                                    ?>
                                     <div class="clearfix"></div>
                                     <hr>
                                     <ul class="media-list">
@@ -267,8 +280,10 @@
             <div class="col-xs-4 col-sm-3 col-md-2">
                 <!-- Rechte Seite -->
             </div>
+        
         </div>
-    </div>
+        </form>            
+   
     
     <!-- Main Page End -->
                     

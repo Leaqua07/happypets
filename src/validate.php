@@ -46,6 +46,8 @@ if ($erg->num_rows) {
 				}
 				session_start();
 				$_SESSION['email'] = $email;
+                $_SESSION['eingeloggt'] = true;
+               
 				header("location: ../index.html"); //Eingeloggte Weiterleitungsseite, evtl noch ändern
 			} else{
 				echo "Email or Passwort incorrect";
