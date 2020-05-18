@@ -27,6 +27,9 @@
     <link href="../css/agency.min.css" rel="stylesheet">
     <link href="../css/agency.css" rel="stylesheet">
     
+    <?php
+        include_once($_SERVER['DOCUMENT_ROOT'] . "/formular/happypets/inc/config.inc.php");
+    ?>
 
 </head>
 
@@ -62,97 +65,93 @@
             <div class="col-xs-4 col-sm-6 col-md-8">
                 <div class="m-4 b-4"><hr></div>  <!-- Spacer -->
                 <div class="card-deck">
-                    
+
                     <!--Lala
-                   
-            -->
-                <!--Leas Blödsinn ab hier*************************-->
-                <div class="m-5 b-5"><hr></div>  
-                <div class="card-deck">
-                    <div class="card text-center">
+
+                    -->
+                    <!--Leas Blödsinn ab hier*************************-->
+                    <div class="m-5 b-5"><hr></div>  
+                    <div class="card-deck">
+                        <div class="card text-center">
+
+                            <?php  include "getinfofromdb.php";?>
+                            <form method="get" action="getinfofromdb.php">
+                                <?php 
+                                foreach ($tiere as $t) {
+                                ?>
+                                <img class="card-img-top img-responsive img-fluid" src= " <?php echo $t->tierbild; ?> " alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase"><?php echo $t->name; ?></h5>
+
+                                    <dl class="row">
+                                        <dt class="col-sm-3">Name</dt>
+                                        <dd class="col-sm-9"><?php echo $t->name; ?></dd>
+
+                                        <dt class="col-sm-3">Geboren am</dt>
+                                        <dd class="col-sm-9">
+                                            <p><?php echo $t->geburtstag; ?></p>
+                                        </dd>
+
+                                        <dt class="col-sm-3">Geschlecht</dt>
+                                        <dd class="col-sm-9"><?php echo $t->geschlecht; ?></dd>
+
+                                        <dt class="col-sm-3 text-truncate">Rasse</dt>
+                                        <dd class="col-sm-9"><?php echo $t->rasse; ?></dd>
+                                    </dl>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-primary">Zu <?php echo $t->name; ?></a>
+                                </div>
+                                <?php
+                                } ?>
+                            </form>
+                            <!-- Ende Lea Mess-->
                         
-                        <?php  include "getinfofromdb.php";?>
-                        <form method="get" action="getinfofromdb.php">
-                        <?php 
-                            foreach ($tiere as $t) {
-                        ?>
-                            <img class="card-img-top img-responsive img-fluid" src= " <?php echo $t->tierbild; ?> " alt="Card image cap">
-                         <div class="card-body">
-                            <h5 class="card-title text-uppercase"><?php echo $t->name; ?></h5>
-                       
-                        <dl class="row">
-                            <dt class="col-sm-3">Name</dt>
-                            <dd class="col-sm-9"><?php echo $t->name; ?></dd>
+                            <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 
-                            <dt class="col-sm-3">Geboren am</dt>
-                            <dd class="col-sm-9">
-                                <p><?php echo $t->geburtstag; ?></p>
-                            </dd>
+                     <!-- <div class="card text-center">
+                            <img class="card-img-top img-responsive img-fluid" src="../img/Tara-blick-gestempelt-gross.jpg" alt="Card image cap">
+                            <div class="card-body">
+                            <h5 class="card-title text-uppercase">Nino</h5>
+                            <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                      <!--      <dl class="row">
+                                <dt class="col-sm-3">Name</dt>
+                                <dd class="col-sm-9">Nino</dd>
 
-                            <dt class="col-sm-3">Geschlecht</dt>
-                            <dd class="col-sm-9"><?php echo $t->geschlecht; ?></dd>
+                                <dt class="col-sm-3">Alter</dt>
+                                <dd class="col-sm-9">
+                                    <p>1 Jahr.</p>
+                                    <p>Geboren Mai 2019</p>
+                                </dd>
 
-                            <dt class="col-sm-3 text-truncate">Rasse</dt>
-                            <dd class="col-sm-9"><?php echo $t->rasse; ?></dd>
-                           
-                        </dl>
+                                <dt class="col-sm-3">Geschlecht</dt>
+                                <dd class="col-sm-9">Männlich</dd>
+
+                                <dt class="col-sm-3 text-truncate">Rasse</dt>
+                                <dd class="col-sm-9">American Foxhound</dd>
+
+                                <dt class="col-sm-3 text-truncate">Wohnt in</dt>
+                                <dd class="col-sm-9">Babenhausen</dd> -->
+
+                                <!--<dt class="col-sm-3">Nesting</dt>
+                                <dd class="col-sm-9">
+                                    <dl class="row">
+                                        <dt class="col-sm-4">Nested definition list</dt>
+                                        <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+                                    </dl>
+                                </dd> --> 
+                          <!--  </dl>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-primary">Zu Nino</a> 
+                            </div> -->
                         </div>
-                        <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Zu <?php echo $t->name; ?></a>
-                        </div>
-                   
-                    
-                    
-                    
-                 <?php
-               } ?>
-                        </form>
-                        <!-- Ende Lea Mess-->
-                        
-                        <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
-                       
-                 <!-- <div class="card text-center">
-                        <img class="card-img-top img-responsive img-fluid" src="../img/Tara-blick-gestempelt-gross.jpg" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title text-uppercase">Nino</h5>
-                        <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
-                  <!--      <dl class="row">
-                            <dt class="col-sm-3">Name</dt>
-                            <dd class="col-sm-9">Nino</dd>
-
-                            <dt class="col-sm-3">Alter</dt>
-                            <dd class="col-sm-9">
-                                <p>1 Jahr.</p>
-                                <p>Geboren Mai 2019</p>
-                            </dd>
-
-                            <dt class="col-sm-3">Geschlecht</dt>
-                            <dd class="col-sm-9">Männlich</dd>
-
-                            <dt class="col-sm-3 text-truncate">Rasse</dt>
-                            <dd class="col-sm-9">American Foxhound</dd>
-                            
-                            <dt class="col-sm-3 text-truncate">Wohnt in</dt>
-                            <dd class="col-sm-9">Babenhausen</dd> -->
-                            
-                            <!--<dt class="col-sm-3">Nesting</dt>
-                            <dd class="col-sm-9">
-                                <dl class="row">
-                                    <dt class="col-sm-4">Nested definition list</dt>
-                                    <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
-                                </dl>
-                            </dd> --> 
-                      <!--  </dl>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Zu Nino</a> 
-                        </div> -->
                     </div>
+                    <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
                 </div>
-                <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
-            </div>
-            <div class="col-xs-4 col-sm-3 col-md-2">
+                <div class="col-xs-4 col-sm-3 col-md-2">
                 <!-- Rechte Seite -->
+                </div>
             </div>
         </div>
     </div>
@@ -211,6 +210,6 @@
 
     <!-- Custom scripts for this template -->
     <!-- <script src="../js/agency.min.js"></script> -->
-
+    
 </body>
 </html>
