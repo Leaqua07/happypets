@@ -12,7 +12,7 @@ if ($db->connect_errno) {
 //-------------Datenbankabfrage----------------------------
 
 $erg = $db->query("SELECT * FROM tiere") or die($db->error); // or die($db-
-
+$erg2 = $db->query("SELECT * FROM tierinfo") or die($db->error);
 if ($erg->num_rows) { //Wenn min. 1 Ergebnis zurückkommt
 
 //------Ergebnismapping-------------
@@ -37,6 +37,33 @@ if ($erg->num_rows) { //Wenn min. 1 Ergebnis zurückkommt
    */
 	 
 	}
+
+if ($erg2->num_rows) { //Wenn min. 1 Ergebnis zurückkommt
+
+//------Ergebnismapping-------------
+    
+   
+		while ($datensatz = $erg->fetch_object()) {
+			$tierinfo[] = $datensatz;
+		}
+	
+	/* while ($zeile = $erg->fetch_object()) { // test ausgabe
+			$tier_id = $zeile->tier_id;
+			$name = $zeile->name;
+			$geburtstag = $zeile->geburtstag;
+			$geschlecht = $zeile->$geschlecht;
+			$art = $zeile->$art;
+			$rasse = $zeile->$rasse;
+			$geimpft = $zeile->$geimpft;
+			$vermittelt = $zeile->$vermittelt;
+			$tierbild = $zeile->$tierbild;
+           // print($name);
+		}
+   */
+	 
+	}
+
+
 		$erg->free();
 		$db->close();
 
