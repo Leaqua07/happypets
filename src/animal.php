@@ -67,7 +67,61 @@
     <!-- Main Page -->
     <section class="page-section" id="animal">
         
-    
+    <!--Daten-GET-->
+           <?php  include "getinfofromdb.php";?>
+                <form method="get" action="getinfofromdb.php">
+                <?php
+                    echo "tierid: " , $_GET['tierid'];
+                    
+                            //Varriablendefinitionen
+                                    $tier_id;
+                                    $name;
+                                    $geburtstag;
+                                    $geschlecht;
+                                    $art;
+                                    $rasse;
+                                    $geimpftt;
+                                    $vermittelt;
+                                    $tierbild;
+                                    
+                                    $futter;
+                                    $ausstattung;
+                                    $aufwand;
+                                    $pflege;
+                    
+                    
+                            foreach ($tiere as $t) { //den datenbanksatz durchgehen
+                                if ($t->tier_id == $_GET['tierid']){ //Daten für das Tier raussuchen
+                                    $tier_id = $t->tier_id;
+                                    $name = $t->name;
+                                    $geburtstag = $t->geburtstag;
+                                    $geschlecht = $t->geschlecht;
+                                    $art = $t->art;
+                                    $rasse = $t->rasse;
+                                    $geimpft = $t->geimpft;
+                                    $vermittelt = $t->vermittelt;
+                                    $tierbild = $t->tierbild;
+                                    echo $name;
+                                }
+                                
+                            }
+                       echo lalala;
+                            foreach ($tierinfo as $ti) {
+                                echo $ti->rasse;
+                                
+                                  if ($rasse == $ti->rasse){ //Daten für das Tier raussuchen
+                                      $futter = $ti->futter;
+                                      $ausstattung = $ti->ausstattung;
+                                      $aufwand = $ti->aufwand;
+                                      $pflege = $ti->pflege;
+                                      
+                                      echo lali;
+                                  }
+                            }
+                    
+                        ?>
+                    
+                    <!--DATEN-GET-ENDE-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 col-sm-3 col-md-2">
@@ -83,7 +137,7 @@
                     </ol>
                     <div class="carousel-inner" style="height: 600px;">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="../img/test/2020-03-feature-giraffe_tcm7-269465.png" alt="First slide">
+                            <img class="d-block w-100" src="<?php echo $tierbild; ?>" alt="First slide">
                         </div>
                         <div class="carousel-item">
                             <img class="d-block w-100" src="../img/test/lamb-iStock-665494268-16x9-e1559777676675.jpg" alt="Second slide">
@@ -107,71 +161,39 @@
                 
                 <!-- Info Box -->
               
-                 <?php  include "getinfofromdb.php";?>
-                <form method="get" action="getinfofromdb.php">
-                <?php
-                    echo "tierid: " , $_GET['tierid'];
-                    
-                    <?php 
-                            foreach ($tiere as $t) { //den datenbanksatz durchgehen
-                                if ($t->tier_id == $_GET['tierid']){ //Daten für das Tier raussuchen
-                                    $tier_id = $t->tier_id;
-                                    $name = $t->name;
-                                    $geburtstag = $t->geburtstag;
-                                    $geschlecht = $t->$geschlecht;
-                                    $art = $t->$art;
-                                    $rasse = $t->$rasse;
-                                    $geimpft = $t->$geimpft;
-                                    $vermittelt = $t->$vermittelt;
-                                    $tierbild = $t->$tierbild;
-                                }
-                                
-                            }
-                            foreach ($tierinfo as $ti) {
-                                  if ($rasse == $ti->rasse){ //Daten für das Tier raussuchen
-                                      $futter = $ti->futter;
-                                      $ausstattung = $ti->ausstattung;
-                                      $aufwand = $ti->aufwand;
-                                      $pflege = $ti->pfleger;
-                                      
-                                      
-                                  }
-                            }
-                    
-                        ?>
-                    
-                    ?>
+              
+                  
                     
                 <dl class="row">
                     <dt class="col-sm-3">Name</dt>
-                    <dd class="col-sm-9"><?php echo $t->name; ?></dd>
+                    <dd class="col-sm-9"><?php echo $name; ?></dd>
 
                     <dt class="col-sm-3">Geboren am</dt>
                     <dd class="col-sm-9">
-                        <p><?php echo $t->geburtstag; ?></p>
+                        <p><?php echo $geburtstag; ?></p>
                     </dd>
 
                     <dt class="col-sm-3">Geschlecht</dt>
-                    <dd class="col-sm-9"><?php echo $t->geschlecht; ?></dd>
+                    <dd class="col-sm-9"><?php echo $geschlecht; ?></dd>
 
                     <dt class="col-sm-3 text-truncate">Rasse</dt>
-                    <dd class="col-sm-9"><?php echo $t->rasse; ?></dd>
+                    <dd class="col-sm-9"><?php echo $rasse; ?></dd>
                     
                     <br><br><br>
                     
                     <dt class="col-sm-3">Futter</dt>
-                    <dd class="col-sm-9"><?php echo $t->futter; ?></dd>
+                    <dd class="col-sm-9"><?php echo $futter; ?></dd>
 
                     <dt class="col-sm-3">Ausstattung</dt>
                     <dd class="col-sm-9">
-                        <p><?php echo $t->ausstattung; ?></p>
+                        <p><?php echo $ausstattung; ?></p>
                     </dd>
 
                     <dt class="col-sm-3">Aufwand</dt>
-                    <dd class="col-sm-9"><?php echo $t->aufwand; ?></dd>
+                    <dd class="col-sm-9"><?php echo $aufwand; ?></dd>
 
                     <dt class="col-sm-3 text-truncate">Pflege</dt>
-                    <dd class="col-sm-9"><?php echo $t->pflege; ?></dd>
+                    <dd class="col-sm-9"><?php echo $pflege; ?></dd>
 
                 </dl>
                 

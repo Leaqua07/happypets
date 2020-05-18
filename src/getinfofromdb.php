@@ -38,12 +38,14 @@ if ($erg->num_rows) { //Wenn min. 1 Ergebnis zurückkommt
 	 
 	}
 
+
+
 if ($erg2->num_rows) { //Wenn min. 1 Ergebnis zurückkommt
 
 //------Ergebnismapping-------------
     
    
-		while ($datensatz = $erg->fetch_object()) {
+		while ($datensatz = $erg2->fetch_object()) {
 			$tierinfo[] = $datensatz;
 		}
 	
