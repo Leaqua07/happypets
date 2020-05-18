@@ -1,5 +1,6 @@
 html,body{
     height: 100%;
+    margin-top:20px;
 }
 .container{
     height: 100%;
@@ -38,8 +39,18 @@ html,body{
      border-radius: 50%;
 }
 
-.fit-image{
-width: 100%;
-object-fit: cover;
-height: 300px; /* only if you want fixed height */
+.comment-wrapper .panel-body {
+    max-height:650px;
+    overflow:auto;
+}
+
+.comment-wrapper .media-list .media img {
+    width:64px;
+    height:64px;
+    border:2px solid #e5e7e8;
+}
+
+.comment-wrapper .media-list .media {
+    border-bottom:1px dashed #efefef;
+    margin-bottom:25px;
 }

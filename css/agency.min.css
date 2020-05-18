@@ -103,7 +103,7 @@ img::-moz-selection{
 	font-weight:400;
 	padding:.75em 0;
 	letter-spacing:1px;
-	color:#fff;
+	color:#CCC;
 	font-family:Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'
 }
 #mainNav .navbar-nav .nav-item .nav-link.active,#mainNav .navbar-nav .nav-item .nav-link:hover{
