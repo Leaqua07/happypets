@@ -74,6 +74,14 @@
                         <?php  include "getinfofromdb.php";?>
                         <form method="get" action="getinfofromdb.php">
                         <?php 
+                            if(isset( $_SESSION['email'])){
+                                echo angemeldet;
+                                 echo $_SESSION['email'] ;
+                            } else{
+                                echo nichtangemeldet;
+                            }
+                           
+                            echo lala;
                             foreach ($tiere as $t) {
                         ?>
                             <img class="card-img-top img-responsive img-fluid" src= " <?php echo $t->tierbild; ?> " alt="Card image cap">
@@ -98,15 +106,11 @@
                         </dl>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Zu <?php echo $t->name; ?></a>
+                             <a href="animal.php?tierid=<?php ; echo $t->tier_id; ?>" class="btn btn-primary">Zu <?php echo $t->name; ?></a>
+                           
                         </div>
-                   
-                    
-                    
-                    
-                 <?php
-               } ?>
-                        </form>
+                       
+                         <?php } ?></form>
                         <!-- Ende Lea Mess-->
                         
                         <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
@@ -206,8 +210,7 @@
     <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Contact form JavaScript -->
-    <script src="../js/jqBootstrapValidation.js"></script>
-    <script src="../js/contact_me.js"></script>
+  
 
     <!-- Custom scripts for this template -->
     <!-- <script src="../js/agency.min.js"></script> -->
