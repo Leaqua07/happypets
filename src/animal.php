@@ -71,7 +71,7 @@
            <?php  include "getinfofromdb.php";?>
                 <form method="get" action="getinfofromdb.php">
                 <?php
-                    echo "tierid: " , $_GET['tierid'];
+                   
                     
                             //Varriablendefinitionen
                                     $tier_id;
@@ -101,13 +101,13 @@
                                     $geimpft = $t->geimpft;
                                     $vermittelt = $t->vermittelt;
                                     $tierbild = $t->tierbild;
-                                    echo $name;
+                                   
                                 }
                                 
                             }
-                       echo $user->name;
+                       
                             foreach ($tierinfo as $ti) {
-                                echo $ti->rasse;
+                               
                                 
                                   if ($rasse == $ti->rasse){ //Daten für das Tier raussuchen
                                       $futter = $ti->futter;
@@ -115,7 +115,7 @@
                                       $aufwand = $ti->aufwand;
                                       $pflege = $ti->pflege;
                                       
-                                      echo lali;
+                                      
                                   }
                             }
                     
@@ -248,6 +248,7 @@
                                                
                                                 
                                             }
+                                              if($c->tier_id == $tier_id) {
                                      ?>
                                   
                                         <li class="media">
@@ -256,7 +257,9 @@
                                             </a>
                                             <div class="media-body">
                                                 <span class="text-muted pull-right">
-                                                    <small class="text-muted"> <?php echo $c->date; ?></small>
+                                                     <small class="text-muted"> <?php echo $c->timestamp; ?></small>
+                                                    
+                                                    
                                                 </span>
                                                 <strong class="text-success">@<?php echo $benutzername ?> </strong>
                                                 <p>
@@ -266,7 +269,7 @@
                                             </div>
                                         </li>
                                           
-                                          <?php  } ?>
+                                          <?php } } ?>
 
                                           
                                           
