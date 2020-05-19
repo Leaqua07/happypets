@@ -105,7 +105,7 @@
                                 }
                                 
                             }
-                       echo lalala;
+                       echo $user->name;
                             foreach ($tierinfo as $ti) {
                                 echo $ti->rasse;
                                 
@@ -118,6 +118,9 @@
                                       echo lali;
                                   }
                             }
+                    
+                    
+                     
                     
                         ?>
                     
@@ -224,51 +227,50 @@
                                     ?>
                                     <div class="clearfix"></div>
                                     <hr>
-                                    <ul class="media-list">
+                                      <ul class="media-list">
+                         <!--Kommentaranzeige -->
+                                    <?php    
+                                        $benutzername;
+                                        $user_id;
+                                        $email;
+                                        $bild;
+                                          
+                                          foreach($comments as $c){
+                                            foreach($user as $u){
+                                                if($c->user_id == $u->user_id){
+                                                   $benutzername = $u->benutzername;
+                                                    $user_id = $u->user_id;
+                                                    $email = $u->email;
+                                                    $bild = $u->bild;  
+                                                   
+                                                    
+                                                }
+                                               
+                                                
+                                            }
+                                     ?>
+                                  
                                         <li class="media">
                                             <a href="#" class="pull-left">
-                                                <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
+                                                <img src=<?php echo $bild ?> alt="no pic" class="img-circle">
                                             </a>
                                             <div class="media-body">
                                                 <span class="text-muted pull-right">
-                                                    <small class="text-muted">30 min ago</small>
+                                                    <small class="text-muted"> <?php echo $c->date; ?></small>
                                                 </span>
-                                                <strong class="text-success">@MartinoMont</strong>
+                                                <strong class="text-success">@<?php echo $benutzername ?> </strong>
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                    Lorem ipsum dolor sit amet, <a href="#">#consecteturadipiscing </a>.
+                                                    <?php echo $c->comment; ?>
+                                                    
                                                 </p>
                                             </div>
                                         </li>
-                                        <li class="media">
-                                            <a href="#" class="pull-left">
-                                                <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
-                                            </a>
-                                            <div class="media-body">
-                                                <span class="text-muted pull-right">
-                                                    <small class="text-muted">30 min ago</small>
-                                                </span>
-                                                <strong class="text-success">@LaurenceCorreil</strong>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                    Lorem ipsum dolor <a href="#">#ipsumdolor </a>adipiscing elit.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <a href="#" class="pull-left">
-                                                <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-circle">
-                                            </a>
-                                            <div class="media-body">
-                                                <span class="text-muted pull-right">
-                                                    <small class="text-muted">30 min ago</small>
-                                                </span>
-                                                <strong class="text-success">@JohnNida</strong>
-                                                <p>
-                                                    Lorem ipsum dolor <a href="#">#sitamet</a> sit amet, consectetur adipiscing elit.
-                                                </p>
-                                            </div>
-                                        </li>
+                                          
+                                          <?php  } ?>
+
+                                          
+                                          
+                                          
                                     </ul>
                                 </div>
                             </div>
