@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>HappyPets - Login</title>
+    <title>HappyPets - Registrieren</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,7 +34,7 @@
         <div class="container">
             <div class="intro-text">
                 <!--<div class="intro-lead-in">HappyPets</div>-->
-                <div class="intro-heading text-uppercase">Log dich ein:</div>
+                <div class="intro-heading text-uppercase">Registriere dich hier:</div>
             </div>
         </div>
     </header>
@@ -64,8 +64,13 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Log In</h5>
+                        <h5 class="card-title text-center">Registrieren</h5>
                         <form class="form-signin" method="post" action="validate.php">
+                            <div class="form-label-group">
+                                <input type="username" name="username" id="inputUsername" class="form-control" placeholder="Benutzername" required autofocus>
+                                <label for="inputEmail">Benutzername</label>
+                            </div>
+                            
                             <div class="form-label-group">
                                 <input type="email" name="email" id="inputEmail" class="form-control" placeholder="E-Mail Adresse" required autofocus>
                                 <label for="inputEmail">E-Mail Adresse</label>
@@ -75,15 +80,18 @@
                                 <input type="password" name="passwort" id="inputPassword" class="form-control" placeholder="Passwort" required>
                                 <label for="inputPassword">Passwort</label>
                             </div>
+                            
+                            <div class="form-label-group">
+                                <input type="passwordRepeat" name="passwortWiederholen" id="inputPasswordRepeat" class="form-control" placeholder="Passwort wiederholen" required>
+                                <label for="inputPassword">Passwort wiederholen</label>
+                            </div>
 
                             <div class="custom-control custom-checkbox mb-3">
                                 <input type="checkbox" name="remember" value="1" class="custom-control-input" id="customCheck1">
                                 <label class="custom-control-label" for="customCheck1">Passwort merken</label>
                             </div>
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="login">Anmelden</button>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="login">Registrieren</button>
                         </form>
-                        <br>
-                        Noch kein Account? <a href="register.html">Hier registrieren</a>
                     </div>
                 </div>
             </div>
