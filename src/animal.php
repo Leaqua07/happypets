@@ -4,6 +4,7 @@
 <head>
     <?php
     session_start();
+    $_SESSION["test"] = "test";
     ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -71,7 +72,7 @@
         
     <!--Daten-GET-->
            <?php  include "getinfofromdb.php";?>
-                <form method="get" action="getinfofromdb.php">
+                
                 <?php
                    
                     
@@ -202,7 +203,7 @@
 
                 </dl>
             </div>
-                
+               
                 
                 <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
                 
@@ -212,21 +213,25 @@
                         <div class="comment-wrapper">
                             <div class="panel panel-info">
                                 <div class="panel-body">
-                                    <!-- Ist User angemeldet -Prüfung   -->
+                                    <!-- Ist User angemeldet, dann zeige Kommentarfeld an   -->
                                     <?php
                                         if(!empty($_SESSION['eingeloggt'])) { 
                                     ?>
                                             
+                                        <!-- Leas mess -->
+                                     <form class="form-signin" method="post" action="postcomment.php">
+                                    
+                                            <textarea class="form-control" name="comment" placeholder="Schreibe ein Kommentar ..." rows="3"></textarea>
+                                            <br>
                                         
-                                    
-                                    
-                                    <textarea class="form-control" placeholder="Schreibe ein Kommentar ..." rows="3"></textarea>
-                                    <br>
-                                    <button type="button" class="btn btn-primary pull-right">Senden</button>
-                                    
-                                    <?php 
+                                            <input name= "tierid" value="<?php echo $tier_id ?>" type="hidden" />
+                                            <button type="submit" name="send" class="btn btn-primary pull-right">Senden</button>
+                                   
+                                    </form>
+                                    <?php
                                         } 
                                     ?>
+                                   
                                     <div class="clearfix"></div>
                                     <hr>
                                       <ul class="media-list">
@@ -289,7 +294,7 @@
             </div>
         
         </div>
-        </form>            
+                 
    
     
     <!-- Main Page End -->

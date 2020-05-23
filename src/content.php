@@ -33,6 +33,7 @@
 <body>
      <?php
     session_start();
+     $_SESSION["test2"] = "test1";
     ?>
     
     <!-- Header -->
