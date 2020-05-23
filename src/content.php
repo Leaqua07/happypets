@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -63,26 +63,15 @@
                 <!-- Linke Seite -->
             </div>
             <div class="col-xs-4 col-sm-6 col-md-8">
-                <div class="m-4 b-4"><hr></div>  <!-- Spacer -->
+                <div class="m-4 b-4"><hr></div>  
                 <div class="card-deck">
-                    
-                    <!--Lala
-                   
-            -->
-                <!--Leas Blödsinn ab hier*************************-->
+            
                 <div class="m-5 b-5"><hr></div>  
                     <div class="card text-center">
                         <?php  include "getinfofromdb.php";?>
                         <form method="get" action="getinfofromdb.php">
                             <?php 
-                                if(isset( $_SESSION['email'])){
-                                    echo angemeldet;
-                                     echo $_SESSION['email'] ;
-                                } else{
-                                    echo nichtangemeldet;
-                                }
-
-                                echo lala;
+                              
                                 foreach ($tiere as $t) {
                                     if ($t->tier_id %2 === 1) {
                             ?>
@@ -115,7 +104,7 @@
                                 }
                             ?>
                         </form>
-                        <!-- Ende Lea Mess-->
+                     
                     </div>
                     <div class="card text-center">
                         <?php 
@@ -152,7 +141,7 @@
                                 }
                             } 
                         ?>
-                        <!-- Ende Lea Mess-->
+                     
                     </div>
                 </div>
                 <div class="col-xs-4 col-sm-3 col-md-2">
