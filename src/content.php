@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -31,7 +31,10 @@
 </head>
 
 <body>
-
+     <?php
+    session_start();
+    ?>
+    
     <!-- Header -->
     <header class="masthead">
         <div class="container">
@@ -74,9 +77,10 @@
                         <?php  include "getinfofromdb.php";?>
                         <form method="get" action="getinfofromdb.php">
                         <?php 
-                            if(isset( $_SESSION['email'])){
+                            echo $_SESSION;
+                            if(isset( $_SESSION['eingeloggt'])){
                                 echo angemeldet;
-                                 echo $_SESSION['email'] ;
+                                 echo $_SESSION['eingeloggt'] ;
                             } else{
                                 echo nichtangemeldet;
                             }
