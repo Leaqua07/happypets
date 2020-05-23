@@ -71,96 +71,93 @@
             -->
                 <!--Leas Blödsinn ab hier*************************-->
                 <div class="m-5 b-5"><hr></div>  
-                <div class="card-deck">
                     <div class="card text-center">
-                        
                         <?php  include "getinfofromdb.php";?>
                         <form method="get" action="getinfofromdb.php">
-                        <?php 
-                            echo $_SESSION;
-                            if(isset( $_SESSION['eingeloggt'])){
-                                echo angemeldet;
-                                 echo $_SESSION['eingeloggt'] ;
-                            } else{
-                                echo nichtangemeldet;
-                            }
-                           
-                            echo lala;
-                            foreach ($tiere as $t) {
-                        ?>
-                            <img class="card-img-top img-responsive img-fluid" src= " <?php echo $t->tierbild; ?> " alt="Card image cap">
-                         <div class="card-body">
-                            <h5 class="card-title text-uppercase"><?php echo $t->name; ?></h5>
-                       
-                        <dl class="row">
-                            <dt class="col-sm-3">Name</dt>
-                            <dd class="col-sm-9"><?php echo $t->name; ?></dd>
+                            <?php 
+                                if(isset( $_SESSION['email'])){
+                                    echo angemeldet;
+                                     echo $_SESSION['email'] ;
+                                } else{
+                                    echo nichtangemeldet;
+                                }
 
-                            <dt class="col-sm-3">Geboren am</dt>
-                            <dd class="col-sm-9">
-                                <p><?php echo $t->geburtstag; ?></p>
-                            </dd>
+                                echo lala;
+                                foreach ($tiere as $t) {
+                                    if ($t->tier_id %2 === 1) {
+                            ?>
+                                <img class="card-img-top img-responsive img-fluid" src= " <?php echo $t->tierbild; ?> " alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title text-uppercase"><?php echo $t->name; ?></h5>
 
-                            <dt class="col-sm-3">Geschlecht</dt>
-                            <dd class="col-sm-9"><?php echo $t->geschlecht; ?></dd>
-
-                            <dt class="col-sm-3 text-truncate">Rasse</dt>
-                            <dd class="col-sm-9"><?php echo $t->rasse; ?></dd>
-                           
-                        </dl>
-                        </div>
-                        <div class="card-footer">
-                             <a href="animal.php?tierid=<?php ; echo $t->tier_id; ?>" class="btn btn-primary">Zu <?php echo $t->name; ?></a>
-                           
-                        </div>
-                       
-                         <?php } ?></form>
-                        <!-- Ende Lea Mess-->
-                        
-                        <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
-                       
-                 <!-- <div class="card text-center">
-                        <img class="card-img-top img-responsive img-fluid" src="../img/Tara-blick-gestempelt-gross.jpg" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title text-uppercase">Nino</h5>
-                        <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
-                  <!--      <dl class="row">
-                            <dt class="col-sm-3">Name</dt>
-                            <dd class="col-sm-9">Nino</dd>
-
-                            <dt class="col-sm-3">Alter</dt>
-                            <dd class="col-sm-9">
-                                <p>1 Jahr.</p>
-                                <p>Geboren Mai 2019</p>
-                            </dd>
-
-                            <dt class="col-sm-3">Geschlecht</dt>
-                            <dd class="col-sm-9">Männlich</dd>
-
-                            <dt class="col-sm-3 text-truncate">Rasse</dt>
-                            <dd class="col-sm-9">American Foxhound</dd>
-                            
-                            <dt class="col-sm-3 text-truncate">Wohnt in</dt>
-                            <dd class="col-sm-9">Babenhausen</dd> -->
-                            
-                            <!--<dt class="col-sm-3">Nesting</dt>
-                            <dd class="col-sm-9">
                                 <dl class="row">
-                                    <dt class="col-sm-4">Nested definition list</dt>
-                                    <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+                                    <dt class="col-sm-3">Name</dt>
+                                    <dd class="col-sm-9"><?php echo $t->name; ?></dd>
+
+                                    <dt class="col-sm-3">Geboren am</dt>
+                                    <dd class="col-sm-9">
+                                        <p><?php echo $t->geburtstag; ?></p>
+                                    </dd>
+
+                                    <dt class="col-sm-3">Geschlecht</dt>
+                                    <dd class="col-sm-9"><?php echo $t->geschlecht; ?></dd>
+
+                                    <dt class="col-sm-3 text-truncate">Rasse</dt>
+                                    <dd class="col-sm-9"><?php echo $t->rasse; ?></dd>
                                 </dl>
-                            </dd> --> 
-                      <!--  </dl>
+                            </div>
+                            <div class="card-footer">
+                                 <a href="animal.php?tierid=<?php ; echo $t->tier_id; ?>" class="btn btn-primary">Zu <?php echo $t->name; ?></a>
+                            </div>
+                            <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
+                             <?php 
+                                    }
+                                }
+                            ?>
+                        </form>
+                        <!-- Ende Lea Mess-->
+                    </div>
+                    <div class="card text-center">
+                        <?php 
+
+                            foreach ($tiere as $t2) {
+                                if ($t2->tier_id %2 === 0) {
+
+                        ?>
+                            <img class="card-img-top img-responsive img-fluid" src= " <?php echo $t2->tierbild; ?> " alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase"><?php echo $t2->name; ?></h5>
+                       
+                            <dl class="row">
+                                <dt class="col-sm-3">Name</dt>
+                                <dd class="col-sm-9"><?php echo $t2->name; ?></dd>
+
+                                <dt class="col-sm-3">Geboren am</dt>
+                                <dd class="col-sm-9">
+                                    <p><?php echo $t2->geburtstag; ?></p>
+                                </dd>
+
+                                <dt class="col-sm-3">Geschlecht</dt>
+                                <dd class="col-sm-9"><?php echo $t2->geschlecht; ?></dd>
+
+                                <dt class="col-sm-3 text-truncate">Rasse</dt>
+                                <dd class="col-sm-9"><?php echo $t2->rasse; ?></dd>
+                            </dl>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Zu Nino</a> 
-                        </div> -->
+                             <a href="animal.php?tierid=<?php ; echo $t2->tier_id; ?>" class="btn btn-primary">Zu <?php echo $t2->name; ?></a>
+                        </div>
+                        <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
+                        <?php
+                                }
+                            } 
+                        ?>
+                        <!-- Ende Lea Mess-->
                     </div>
                 </div>
-                <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
-            </div>
-            <div class="col-xs-4 col-sm-3 col-md-2">
-                <!-- Rechte Seite -->
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <!-- Rechte Seite -->
+                </div>
             </div>
         </div>
     </div>
