@@ -4,6 +4,9 @@
 <head>
 </head>
 <body>
+     <?php
+    session_start();
+    ?>
 
 <?php
 error_reporting(0); //nötig für schöne Fehlerausgabe
