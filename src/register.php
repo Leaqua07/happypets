@@ -72,10 +72,13 @@
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h5 class="card-title text-center">Registrieren</h5>
-                        <form class="form-signin" method="post" action="validate.php">
+                        <!-- Registerdata -->
+                         <?php  include "getinfofromdb.php";?>
+                        <form class="form-signin" method="post" action="pushregisterdatatodb.php">
+                            
                             <div class="form-label-group">
                                 <input type="username" name="username" id="inputUsername" class="form-control" placeholder="Benutzername" required autofocus>
-                                <label for="inputEmail">Benutzername</label>
+                                <label for="inputName">Benutzername</label>
                             </div>
                             
                             <div class="form-label-group">
@@ -99,6 +102,7 @@
                             </div>
                             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="login">Registrieren</button>
                         </form>
+                        <!-- END Register Data-->
                     </div>
                 </div>
             </div>
