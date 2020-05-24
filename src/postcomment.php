@@ -2,10 +2,6 @@
 <?php
 session_start();
 
-echo session_id();
-
-print_r($_SESSION);
-
 //Datenbankverbingdung wird aufgebaut
   error_reporting(0); //nötig für schöne Fehlerausgabe
         $db1 = new mysqli('localhost', 'root', 'root', 'happypets');
@@ -16,10 +12,9 @@ print_r($_SESSION);
         if ($db1->connect_errno) {
             die('Sorry - gerade gibt es ein Problem');
         }
-//$_POST['send'] = true;
-//$_POST['comment']= "lalalaaaa";
-if (isset($_POST['send'])){
-    echo versucheeinzutraen;
+
+if (isset($_POST['send'])){ //Wenn sende-Button gedrückt wurde
+   
     //datenbankverbindungsaufbau
   
     $myuser_id = $_SESSION['user_id'];
@@ -31,12 +26,11 @@ if (isset($_POST['send'])){
 
     $query ="INSERT INTO comments (user_id, comment, timestamp, tier_id) VALUES ('$myuser_id', '$comment',NOW(), '$tier_id')";
     $eintragen = mysqli_query($db1, $query );
-    echo eingetragen;
+    
     header('location: animal.php?tierid=' . $_POST['tierid']);
     }
     $erg->free();
     $db->close();
- //   
 
 
 

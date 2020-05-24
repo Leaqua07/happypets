@@ -4,7 +4,6 @@
 <head>
     <?php
     session_start();
-    $_SESSION["test"] = "test";
     ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -82,6 +81,7 @@
                     
                     
                             foreach ($tiere as $t) { //den datenbanksatz durchgehen
+                                
                                 if ($t->tier_id == $_GET['tierid']){ //Daten für das Tier raussuchen
                                     $tier_id = $t->tier_id;
                                     $name = $t->name;
@@ -98,7 +98,6 @@
                             }
                        
                             foreach ($tierinfo as $ti) {
-                               
                                 
                                   if ($rasse == $ti->rasse){ //Daten für das Tier raussuchen
                                       $futter = $ti->futter;
@@ -110,8 +109,6 @@
                                   }
                             }
                     
-                    
-                     
                     
                         ?>
                     
@@ -187,8 +184,7 @@
                                     <?php
                                         if(!empty($_SESSION['eingeloggt'])) { 
                                     ?>
-                                            
-                                        <!-- Leas mess -->
+                                   
                                      <form class="form-signin" method="post" action="postcomment.php">
                                     
                                             <textarea class="form-control" name="comment" placeholder="Schreibe ein Kommentar ..." rows="3"></textarea>
@@ -246,11 +242,9 @@
                                             </div>
                                         </li>
                                           
-                                          <?php } } ?>
-
-                                          
-                                          
-                                          
+                                          <?php } 
+                                          } ?>
+ 
                                     </ul>
                                 </div>
                             </div>

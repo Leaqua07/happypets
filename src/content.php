@@ -2,7 +2,9 @@
 <html lang="de">
 
 <head>
-    
+     <?php
+    session_start();
+    ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -31,10 +33,7 @@
 </head>
 
 <body>
-     <?php
-    session_start();
-     $_SESSION["test2"] = "test1";
-    ?>
+    
     
     <!-- Header -->
     <header class="masthead">
@@ -112,7 +111,6 @@
 
                             foreach ($tiere as $t2) {
                                 if ($t2->tier_id %2 === 0) {
-
                         ?>
                             <img class="card-img-top img-responsive img-fluid" src= " <?php echo $t2->tierbild; ?> " alt="Card image cap">
                         <div class="card-body">

@@ -2,6 +2,9 @@
 <html lang="de">
 
 <head>
+    <?php
+    session_start();
+    ?>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,9 +31,7 @@
 
 <body id="page-top">
     
-    <?php
-    session_start();
-    ?>
+    
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
@@ -89,14 +90,11 @@
             </div>
             
             <div id="textcontent">
-                Blublublublublublulublublublub. Blublublublublublulublublublub, Blublublublublublulublublublub, Blublublublublublulublublublub
             </div>
         </div>
         </form>
 
 <!-- *******************************************************************-->
-
-
 
         <!-- Footer -->
         <footer class="footer">
