@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <?php
@@ -37,7 +37,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">HappyPets</a>
+            <a class="navbar-brand js-scroll-trigger" href="../index.html">HappyPets</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menü
                 <i class="fas fa-bars"></i>
@@ -57,20 +57,8 @@
             </div>
         </div>
     </nav>
-
-    <!-- Header -->
-    <header class="masthead">
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-heading text-uppercase">Tier</div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Page -->
-    <section class="page-section" id="animal">
-        
-    <!--Daten-GET-->
+    
+        <!--Daten-GET-->
            <?php  include "getinfofromdb.php";?>
                 
                 <?php
@@ -128,41 +116,27 @@
                         ?>
                     
                     <!--DATEN-GET-ENDE-->
+
+    <!-- Header -->
+    <header class="masthead">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-heading text-uppercase"><?php echo $name; ?></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Page -->
+    <section class="page-section" id="animal">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 col-sm-3 col-md-2">
                 <!-- Linke Seite -->
             </div>
             <div class="col-xs-4 col-sm-6 col-md-8">
-                <!-- Image Slider -->
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner" style="height: 600px;">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="<?php echo $tierbild; ?>" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="../img/test/lamb-iStock-665494268-16x9-e1559777676675.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="../img/test/pl-giraffe-wide-1_small.jpg" alt="Third slide">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Vorige</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Nächste</span>
-                    </a>
-                </div>
-                
-                
+                <div class="">
+                    <img class="img-fluid" src="<?php echo $tierbild; ?>" alt="Bild konnte nicht geladen werden, sorry :/">       
+                </div>         
                 <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
                 
                 <!-- Info Box -->
@@ -202,10 +176,6 @@
                     <dd class="col-sm-9"><?php echo $pflege; ?></dd>
 
                 </dl>
-            </div>
-               
-                
-                <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
                 
                 <!-- Comments -->
                 <div class="row bootstrap snippets">
@@ -260,7 +230,7 @@
                                   
                                         <li class="media">
                                             <a href="#" class="pull-left">
-                                                <img src=<?php echo $bild ?> alt="no pic" class="img-circle">
+                                                <img src="<?php echo $bild ?>" alt="no pic" class="img-circle">
                                             </a>
                                             <div class="media-body">
                                                 <span class="text-muted pull-right">
@@ -285,20 +255,18 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                </div>
+                </div> <!-- End of Comments -->
             </div>
             <div class="col-xs-4 col-sm-3 col-md-2">
                 <!-- Rechte Seite -->
             </div>
-        
         </div>
+    </div>
                  
    
     
-    <!-- Main Page End -->
-                    
+    <!-- Main Page End -->          
     </section>
 
     <!-- Footer -->
@@ -330,10 +298,10 @@
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
                         <li class="list-inline-item">
-                            <a href="#">Privacy Policy</a>
+                            <a href="privacypolicy.html">Privacy Policy</a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="#">Terms of Use</a>
+                            <a href="termsofuse.html">Terms of Use</a>
                         </li>
                     </ul>
                 </div>
