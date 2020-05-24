@@ -30,7 +30,7 @@ if (isset($_POST['send'])){ //Wenn sende-Button gedrückt wurde
     header('location: animal.php?tierid=' . $_POST['tierid']);
     }
     $erg->free();
-    $db->close();
+    $db1->close();
 
 
 
