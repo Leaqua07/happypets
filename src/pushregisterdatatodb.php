@@ -13,12 +13,6 @@
         }
 
 
-$_POST['login'] = true;
-$_POST['username']="user11";    
-$_POST['email']= "user11@user.de";    
-$_POST['passwort'] = "sh7up#KT!";  
-$_POST['bild'] = '';
-echo $_POST['login'];
 
 if (isset($_POST['login'])){ //Wenn sende-Button gedrückt wurde
    
