@@ -32,7 +32,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="../index.html">HappyPets</a>
+            <a class="navbar-brand js-scroll-trigger" href="../index.php">HappyPets</a>
         </div>
     </nav>
 
@@ -75,14 +75,13 @@
                         <!-- Registerdata -->
                          <?php  include "getinfofromdb.php";?>
                         <form class="form-signin" method="post" action="pushregisterdatatodb.php">
-                            
                             <div class="form-label-group">
                                 <input type="username" name="username" id="inputUsername" class="form-control" placeholder="Benutzername" required autofocus>
-                                <label for="inputName">Benutzername</label>
+                                <label for="inputUsername">Benutzername</label>
                             </div>
                             
                             <div class="form-label-group">
-                                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="E-Mail Adresse" required autofocus>
+                                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="E-Mail Adresse" required>
                                 <label for="inputEmail">E-Mail Adresse</label>
                             </div>
 
@@ -92,8 +91,8 @@
                             </div>
                             
                             <div class="form-label-group">
-                                <input type="passwordRepeat" name="passwortWiederholen" id="inputPasswordRepeat" class="form-control" placeholder="Passwort wiederholen" required>
-                                <label for="inputPassword">Passwort wiederholen</label>
+                                <input type="password" name="passwortWiederholen" id="inputPasswordConfirm" class="form-control" placeholder="Passwort wiederholen" required>
+                                <label for="inputPasswordConfirm">Passwort wiederholen</label>
                             </div>
 
                             <div class="custom-control custom-checkbox mb-3">
@@ -138,10 +137,10 @@
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
                         <li class="list-inline-item">
-                            <a href="privacypolicy.html">Privacy Policy</a>
+                            <a href="privacypolicy.php">Privacy Policy</a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="termsofuse.html">Terms of Use</a>
+                            <a href="termsofuse.php">Terms of Use</a>
                         </li>
                     </ul>
                 </div>
@@ -161,6 +160,22 @@
 
     <!-- Custom scripts for this template -->
     <!-- <script src="../js/agency.min.js"></script> -->
+    
+    <script>
+        var password = document.getElementById("inputPassword")
+          , confirm_password = document.getElementById("inputPasswordConfirm");
+
+        function validatePassword(){
+          if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwörter stimmen nicht überein!");
+          } else {
+            confirm_password.setCustomValidity('');
+          }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
 
 </body>
 </html>

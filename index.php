@@ -23,7 +23,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">
-
+    <?php session_start(); ?>
 </head>
 
 <body id="page-top">
@@ -44,9 +44,18 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="src/login.html">Login</a>
-                    </li>
+                    <?php 
+                        if(empty($_SESSION['eingeloggt'])) { 
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="src/login.html">Login</a>
+                        </li>
+                    <?php
+                        } else { ?>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="src/logout.php" name="logout">Logout</a>
+                        </li>
+                    <?php } ?> 
                 </ul>
             </div>
         </div>
@@ -194,10 +203,10 @@
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
                         <li class="list-inline-item">
-                            <a href="src/privacypolicy.html">Privacy Policy</a>
+                            <a href="src/privacypolicy.php">Privacy Policy</a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="src/termsofuse.html">Terms of Use</a>
+                            <a href="src/termsofuse.php">Terms of Use</a>
                         </li>
                     </ul>
                 </div>

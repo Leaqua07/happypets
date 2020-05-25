@@ -37,7 +37,7 @@ if (isset($_POST['login'])){ //Wenn sende-Button gedrückt wurde
     
     foreach($user as $u){
       
-        echo $u-> benutzername . "----" . $benutzername . "  " . $u->email . "---" . $email ;
+        #echo $u-> benutzername . "----" . $benutzername . "  " . $u->email . "---" . $email ;
         if ($u->benutzername == $benutzername or $u->email == $email){ // username oder email existiert schon
           header('location:register.php');
          
@@ -55,7 +55,6 @@ if (isset($_POST['login'])){ //Wenn sende-Button gedrückt wurde
             $eintragen = mysqli_query($db1, $query );
     
             echo "eingetragen: " . $eintragen;
-            
     }
         
  
@@ -90,9 +89,8 @@ if (isset($_POST['login'])){ //Wenn sende-Button gedrückt wurde
     
  
     }
-    $erg->free();
+    
     $db1->close();
-
-
-
+    header('location:../index.php');
+    $erg->free();
     ?>

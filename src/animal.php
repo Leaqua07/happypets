@@ -2,9 +2,8 @@
 <html lang="de">
 
 <head>
-    <?php
-    session_start();
-    ?>
+    <?php session_start(); ?>
+	
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -36,22 +35,25 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="../index.html">HappyPets</a>
+            <a class="navbar-brand js-scroll-trigger" href="../index.php">HappyPets</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menü
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#about">Über Uns</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="login.html">Login</a>
-                    </li>
+                    <?php 
+                        if(empty($_SESSION['eingeloggt'])) { 
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="login.html">Login</a>
+                        </li>
+                    <?php
+                        } else { ?>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="logout.php" name="logout">Logout</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
@@ -292,10 +294,10 @@
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
                         <li class="list-inline-item">
-                            <a href="privacypolicy.html">Privacy Policy</a>
+                            <a href="privacypolicy.php">Privacy Policy</a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="termsofuse.html">Terms of Use</a>
+                            <a href="termsofuse.php">Terms of Use</a>
                         </li>
                     </ul>
                 </div>

@@ -59,7 +59,7 @@ if ($erg->num_rows) {
                 $_SESSION['eingeloggt'] = true;
                 echo true;
                
-				header("location: ../index.html"); //Eingeloggte Weiterleitungsseite, evtl noch ändern
+				header('Location: ' . $_SERVER['HTTP_REFERER']); //Eingeloggte Weiterleitungsseite
 			} else{
 				echo "Email or Passwort incorrect";
 			} 
