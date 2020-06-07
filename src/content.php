@@ -66,7 +66,7 @@
         <div class="container">
             <div class="intro-text">
                 <!--<div class="intro-lead-in">HappyPets</div>-->
-                <div class="intro-heading text-uppercase">Content Page:</div>
+                <div class="intro-heading text-uppercase">Neuzugänge:</div>
             </div>
         </div>
     </header>
