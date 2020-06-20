@@ -17,9 +17,9 @@
 if (isset($_POST['login'])){ //Wenn sende-Button gedrückt wurde
    
 
-    $benutzername = $_POST['username'];
-    $email = $_POST['email'];
-    $passwort = $_POST['passwort'];
+    $benutzername = mysqli_real_escape_string($db1,$_POST['username']); //special characters will be escaped
+    $email = mysqli_real_escape_string($db1,$_POST['email']);
+    $passwort = mysqli_real_escape_string($db1,$_POST['passwort']);
     $bild = $_POST['bild'];
     $user[] = [];
     $query;
@@ -68,7 +68,7 @@ if (isset($_POST['login'])){ //Wenn sende-Button gedrückt wurde
         $erg4 = $db1->query($query) or die($db1->error);
        
         if ($erg4->num_rows) { 
-            echo inder2if;
+            
            
             
             while ($datensatz = $erg4->fetch_object()) {
