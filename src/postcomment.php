@@ -16,17 +16,16 @@ session_start();
 if (isset($_POST['send'])){ //Wenn sende-Button gedrückt wurde
    
     //datenbankverbindungsaufbau
-  
+    echo hallo;
     $myuser_id = $_SESSION['user_id'];
     $mybenutzername =  $_SESSION['user_id'];
     $myemail =  $_SESSION['email'];
     $myeingeloggt = $_SESSION['eingeloggt'];
-    $comment = $_POST['comment'];
-    $tier_id = $_POST['tierid'];
-
+    $comment =  mysqli_real_escape_string($db1,$_POST['comment']);
+    $tier_id =  $_POST['tierid'];
+    
     $query ="INSERT INTO comments (user_id, comment, timestamp, tier_id) VALUES ('$myuser_id', '$comment',NOW(), '$tier_id')";
     $eintragen = mysqli_query($db1, $query );
-    
     header('location: animal.php?tierid=' . $_POST['tierid']);
     }
     $erg->free();
