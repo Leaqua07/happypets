@@ -8,7 +8,7 @@
     ?>
 
     <body id="page-top">
-        <?php include('../inc/navbar_min.php'); ?>
+        <?php include('../inc/navbar_animal.php'); ?>
         <!--Daten-GET-->
            <?php include "getinfofromdb.php"; ?>
                 
