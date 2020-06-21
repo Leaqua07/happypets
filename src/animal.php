@@ -42,77 +42,80 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
-                    <?php 
-                        if(empty($_SESSION['eingeloggt'])) { 
-                    ?>
+                    <?php
+if (empty($_SESSION['eingeloggt']))
+{
+?>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="login.html">Login</a>
                         </li>
                     <?php
-                        } else { ?>
+}
+else
+{ ?>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="logout.php" name="logout">Logout</a>
                         </li>
-                    <?php } ?>
+                    <?php
+} ?>
                 </ul>
             </div>
         </div>
     </nav>
     
         <!--Daten-GET-->
-           <?php  include "getinfofromdb.php";?>
+           <?php include "getinfofromdb.php"; ?>
                 
                 <?php
-                   
-                    
-                            //Varriablendefinitionen
-                                    $tier_id;
-                                    $name;
-                                    $geburtstag;
-                                    $geschlecht;
-                                    $art;
-                                    $rasse;
-                                    $geimpftt;
-                                    $vermittelt;
-                                    $tierbild;
-                                    
-                                    $futter;
-                                    $ausstattung;
-                                    $aufwand;
-                                    $pflege;
-                    
-                    
-                            foreach ($tiere as $t) { //den datenbanksatz durchgehen
-                                
-                                if ($t->tier_id == $_GET['tierid']){ //Daten für das Tier raussuchen
-                                    $tier_id = $t->tier_id;
-                                    $name = $t->name;
-                                    $geburtstag = $t->geburtstag;
-                                    $geschlecht = $t->geschlecht;
-                                    $art = $t->art;
-                                    $rasse = $t->rasse;
-                                    $geimpft = $t->geimpft;
-                                    $vermittelt = $t->vermittelt;
-                                    $tierbild = $t->tierbild;
-                                   
-                                }
-                                
-                            }
-                       
-                            foreach ($tierinfo as $ti) {
-                                
-                                  if ($rasse == $ti->rasse){ //Daten für das Tier raussuchen
-                                      $futter = $ti->futter;
-                                      $ausstattung = $ti->ausstattung;
-                                      $aufwand = $ti->aufwand;
-                                      $pflege = $ti->pflege;
-                                      
-                                      
-                                  }
-                            }
-                    
-                    
-                        ?>
+
+//Varriablendefinitionen
+$tier_id;
+$name;
+$geburtstag;
+$geschlecht;
+$art;
+$rasse;
+$geimpftt;
+$vermittelt;
+$tierbild;
+
+$futter;
+$ausstattung;
+$aufwand;
+$pflege;
+
+foreach ($tiere as $t)
+{ //den datenbanksatz durchgehen
+    if ($t->tier_id == $_GET['tierid'])
+    { //Daten für das Tier raussuchen
+        $tier_id = $t->tier_id;
+        $name = $t->name;
+        $geburtstag = $t->geburtstag;
+        $geschlecht = $t->geschlecht;
+        $art = $t->art;
+        $rasse = $t->rasse;
+        $geimpft = $t->geimpft;
+        $vermittelt = $t->vermittelt;
+        $tierbild = $t->tierbild;
+
+    }
+
+}
+
+foreach ($tierinfo as $ti)
+{
+
+    if ($rasse == $ti->rasse)
+    { //Daten für das Tier raussuchen
+        $futter = $ti->futter;
+        $ausstattung = $ti->ausstattung;
+        $aufwand = $ti->aufwand;
+        $pflege = $ti->pflege;
+
+    }
+}
+
+?>
                     
                     <!--DATEN-GET-ENDE-->
 
@@ -184,8 +187,9 @@
                                 <div class="panel-body">
                                     <!-- Ist User angemeldet, dann zeige Kommentarfeld an   -->
                                     <?php
-                                        if(!empty($_SESSION['eingeloggt'])) { 
-                                    ?>
+if (!empty($_SESSION['eingeloggt']))
+{
+?>
                                    
                                      <form class="form-signin" method="post" action="postcomment.php">
                                     
@@ -197,34 +201,36 @@
                                    
                                     </form>
                                     <?php
-                                        } 
-                                    ?>
+}
+?>
                                    
                                     <div class="clearfix"></div>
                                     <hr>
                                       <ul class="media-list">
                          <!--Kommentaranzeige -->
-                                    <?php    
-                                        $benutzername;
-                                        $user_id;
-                                        $email;
-                                        $bild;
-                                          
-                                          foreach($comments as $c){
-                                            foreach($user as $u){
-                                                if($c->user_id == $u->user_id){
-                                                   $benutzername = $u->benutzername;
-                                                    $user_id = $u->user_id;
-                                                    $email = $u->email;
-                                                    $bild = $u->bild;  
-                                                   
-                                                    
-                                                }
-                                               
-                                                
-                                            }
-                                              if($c->tier_id == $tier_id) {
-                                     ?>
+                                    <?php
+$benutzername;
+$user_id;
+$email;
+$bild;
+
+foreach ($comments as $c)
+{
+    foreach ($user as $u)
+    {
+        if ($c->user_id == $u->user_id)
+        {
+            $benutzername = $u->benutzername;
+            $user_id = $u->user_id;
+            $email = $u->email;
+            $bild = $u->bild;
+
+        }
+
+    }
+    if ($c->tier_id == $tier_id)
+    {
+?>
                                   
                                         <li class="media">
                                             <a href="#" class="pull-left">
@@ -244,8 +250,9 @@
                                             </div>
                                         </li>
                                           
-                                          <?php } 
-                                          } ?>
+                                          <?php
+    }
+} ?>
  
                                     </ul>
                                 </div>

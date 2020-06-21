@@ -43,18 +43,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
-                    <?php 
-                        if(empty($_SESSION['eingeloggt'])) { 
-                    ?>
+                    <?php
+if (empty($_SESSION['eingeloggt']))
+{
+?>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="login.html">Login</a>
                         </li>
                     <?php
-                        } else { ?>
+}
+else
+{ ?>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="logout.php" name="logout">Logout</a>
                         </li>
-                    <?php } ?>
+                    <?php
+} ?>
                 </ul>
             </div>
         </div>
@@ -94,13 +98,15 @@
             
                 <div class="m-5 b-5"><hr></div>  
                     <div class="card text-center">
-                        <?php  include "getinfofromdb.php";?>
+                        <?php include "getinfofromdb.php"; ?>
                         <form method="get" action="getinfofromdb.php">
-                            <?php 
-                              
-                                foreach ($tiere as $t) {
-                                    if ($t->tier_id %2 === 1) {
-                            ?>
+                            <?php
+
+foreach ($tiere as $t)
+{
+    if ($t->tier_id % 2 === 1)
+    {
+?>
                                 <img class="card-img-top img-responsive img-fluid" src= " <?php echo $t->tierbild; ?> " alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title text-uppercase"><?php echo $t->name; ?></h5>
@@ -122,22 +128,25 @@
                                 </dl>
                             </div>
                             <div class="card-footer">
-                                 <a href="animal.php?tierid=<?php ; echo $t->tier_id; ?>" class="btn btn-primary">Zu <?php echo $t->name; ?></a>
+                                 <a href="animal.php?tierid=<?php
+                                    echo $t->tier_id; ?>" class="btn btn-primary">Zu <?php echo $t->name; ?></a>
                             </div>
                             <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
-                             <?php 
-                                    }
-                                }
-                            ?>
+                             <?php
+    }
+}
+?>
                         </form>
                      
                     </div>
                     <div class="card text-center">
-                        <?php 
+                        <?php
 
-                            foreach ($tiere as $t2) {
-                                if ($t2->tier_id %2 === 0) {
-                        ?>
+foreach ($tiere as $t2)
+{
+    if ($t2->tier_id % 2 === 0)
+    {
+?>
                             <img class="card-img-top img-responsive img-fluid" src= " <?php echo $t2->tierbild; ?> " alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase"><?php echo $t2->name; ?></h5>
@@ -159,13 +168,14 @@
                             </dl>
                         </div>
                         <div class="card-footer">
-                             <a href="animal.php?tierid=<?php ; echo $t2->tier_id; ?>" class="btn btn-primary">Zu <?php echo $t2->name; ?></a>
+                             <a href="animal.php?tierid=<?php
+                                 echo $t2->tier_id; ?>" class="btn btn-primary">Zu <?php echo $t2->name; ?></a>
                         </div>
                         <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
                         <?php
-                                }
-                            } 
-                        ?>
+    }
+}
+?>
                      
                     </div>
                 </div>

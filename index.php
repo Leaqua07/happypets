@@ -44,18 +44,22 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
                     </li>
-                    <?php 
-                        if(empty($_SESSION['eingeloggt'])) { 
-                    ?>
+                    <?php
+if (empty($_SESSION['eingeloggt']))
+{
+?>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="src/login.html">Login</a>
                         </li>
                     <?php
-                        } else { ?>
+}
+else
+{ ?>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="src/logout.php" name="logout">Logout</a>
                         </li>
-                    <?php } ?> 
+                    <?php
+} ?> 
                 </ul>
             </div>
         </div>

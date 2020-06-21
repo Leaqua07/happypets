@@ -73,7 +73,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-center">Registrieren</h5>
                         <!-- Registerdata -->
-                         <?php  include "getinfofromdb.php";?>
+                         <?php include "getinfofromdb.php"; ?>
                         <form class="form-signin" method="post" action="pushregisterdatatodb.php">
                             <div class="form-label-group">
                                 <input type="username" name="username" id="inputUsername" class="form-control" placeholder="Benutzername" required autofocus>
