@@ -26,7 +26,7 @@
                     else
                     { ?>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="src/logout.php" name="logout">Logout</a>
+                        <?php echo'<a class="nav-link js-scroll-trigger" href="'. $path['src'] .'/logout.php" name="logout">Logout</a>'?>
                     </li>
                 <?php
                     } ?> 
