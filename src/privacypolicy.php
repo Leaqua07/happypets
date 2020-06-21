@@ -4,10 +4,11 @@
         session_start(); 
         $title = "Datenschutzerklärung";
         include_once($_SERVER['DOCUMENT_ROOT'] . "/formular/happypets/inc/config.php");
-        include('../inc/header_min.php');
+        include('../inc/header.php');
     ?>
     
     <body id="page-top">
+        <?php include('../inc/navbar_min.php'); ?>
         <div class="m-5 b-5"><hr></div>  <!-- Spacer -->
         <div class="row">
             <div class="col-xs-4 col-sm-3 col-md-2">

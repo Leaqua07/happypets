@@ -4,11 +4,11 @@
         session_start();
         $title = "Tiere";
         include_once($_SERVER['DOCUMENT_ROOT'] . "/formular/happypets/inc/config.php");
-        include('../inc/header_min.php');
+        include('../inc/header.php');
     ?>
 
     <body id="page-top">
-    
+        <?php include('../inc/navbar_min.php'); ?>
         <!--Daten-GET-->
            <?php include "getinfofromdb.php"; ?>
                 

@@ -7,6 +7,7 @@
         include("inc/header.php");
     ?>
     <body id="page-top">
+        <?php include('inc/navbar.php'); ?>
         <!-- About -->
         <section class="page-section" id="about">
             <div class="container">

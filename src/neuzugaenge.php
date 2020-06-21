@@ -8,8 +8,10 @@
     ?>
 
     <body id="page-top">
-
-     <?php  include "getinfofromdb.php";?>
+        <?php 
+            include('../inc/navbar_min.php');
+            include "getinfofromdb.php";
+        ?>
 
         <!--Content here-->
         <header class="underhead">
