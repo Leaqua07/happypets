@@ -2,7 +2,10 @@
 <html lang="de">
 
 <head>
-	<?php session_start(); ?>
+    <?php 
+        session_start(); 
+        include_once($_SERVER['DOCUMENT_ROOT'] . "/formular/happypets/inc/config.php");
+    ?>
 	
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,10 +15,10 @@
     <title>HappyPets - Nutzungsbedingungen</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <?php echo'<link href="'. $path['vendor'] .'/bootstrap/css/bootstrap.min.css" rel="stylesheet">'?>
 
     <!-- Custom fonts for this template -->
-    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <?php echo'<link href="'. $path['vendor'] .'/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">'?>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -23,7 +26,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="../css/agency.min.css" rel="stylesheet">
+    <?php echo'<link href="'. $path['css'] .'/agency.min.css" rel="stylesheet">'?>
 
 </head>
 
@@ -32,7 +35,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="../index.php">HappyPets</a>
+            <?php echo'<a class="navbar-brand js-scroll-trigger" href="'. $path['rel'] .'index.php">HappyPets</a>'?>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menü
                 <i class="fas fa-bars"></i>
@@ -125,10 +128,10 @@ Der Anbieter behält sich rechtliche Schritte für den Fall der unverlangten Zus
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
                         <li class="list-inline-item">
-                            <a href="privacypolicy.php">Privacy Policy</a>
+                            <?php echo'<a href="'. $path['src'] .'/privacypolicy.php">Privacy Policy</a>'?>
                         </li>
                         <li class="list-inline-item">
-                            <a href="termsofuse.php">Terms of Use</a>
+                            <?php echo'<a href="'. $path['src'] .'/termsofuse.php">Terms of Use</a>'?>
                         </li>
                     </ul>
                 </div>
@@ -137,18 +140,18 @@ Der Anbieter behält sich rechtliche Schritte für den Fall der unverlangten Zus
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <?php echo'<script src="'. $path['vendor'] .'/jquery/jquery.min.js"></script>'?>
+    <?php echo'<script src="'. $path['vendor'] .'/bootstrap/js/bootstrap.bundle.min.js"></script>'?>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <?php echo'<script src="'. $path['vendor'] .'/jquery-easing/jquery.easing.min.js"></script>'?>
 
     <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <?php echo'<script src="'. $path['js'] .'/jqBootstrapValidation.js"></script>'?>
+    <?php echo'<script src="'. $path['js'] .'/contact_me.js"></script>'?>
 
     <!-- Custom scripts for this template -->
-    <script src="js/agency.min.js"></script>
+    <?php echo'<script src="'. $path['js'] .'/agency.min.js"></script>'?>
 
 
 
